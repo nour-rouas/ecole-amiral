@@ -41,8 +41,8 @@ export default function PrescolairePage() {
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Enfants en classe préscolaire"
+                src="https://images.unsplash.com/photo-1587652990194-38152b3f2479?q=80&w=1000"
+                alt="Activités d'éveil en maternelle"
                 fill
                 className="object-cover"
               />
@@ -271,8 +271,8 @@ export default function PrescolairePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1 relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Enseignants avec des enfants"
+                src="https://images.unsplash.com/photo-1544237526-cae15a57ed1e?q=80&w=1000"
+                alt="Apprentissage par le jeu en maternelle"
                 fill
                 className="object-cover"
               />
@@ -310,7 +310,7 @@ export default function PrescolairePage() {
               <Button asChild size="lg" className="bg-bright-red hover:bg-bright-red/90">
                 <Link href="/contact">Nous contacter</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button asChild size="lg" variant="outline" className="bg-white text-navy-blue hover:bg-white/10">
                 <Link href="/installations">Découvrir nos installations</Link>
               </Button>
             </div>

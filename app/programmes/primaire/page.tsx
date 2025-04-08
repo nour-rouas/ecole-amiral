@@ -37,8 +37,8 @@ export default function PrimairePage() {
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Élèves en classe primaire"
+                src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=1000"
+                alt="Salle de classe primaire avec élèves travaillant"
                 fill
                 className="object-cover"
               />
@@ -365,8 +365,8 @@ export default function PrimairePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Activités extrascolaires"
+                src="https://images.unsplash.com/photo-1610484826967-09c5720778c7?q=80&w=1000"
+                alt="Enfants participant à une activité scientifique"
                 fill
                 className="object-cover"
               />
@@ -416,7 +416,7 @@ export default function PrimairePage() {
               <Button asChild size="lg" className="bg-bright-red hover:bg-bright-red/90">
                 <Link href="/contact">Nous contacter</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button asChild size="lg" variant="outline" className="bg-white text-navy-blue hover:bg-white/10">
                 <Link href="/installations">Découvrir nos installations</Link>
               </Button>
             </div>

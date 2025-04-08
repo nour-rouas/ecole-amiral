@@ -1,100 +1,66 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
 export default function ProgramsSection() {
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-blue mb-4">Nos programmes éducatifs</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-navy-blue mb-4">Nos programmes</h2>
           <p className="text-navy-blue/80">
-            Découvrez nos programmes adaptés à chaque tranche d&apos;âge, conçus pour favoriser l&apos;épanouissement et
-            la réussite de chaque enfant.
+            Des programmes éducatifs adaptés à chaque âge pour accompagner au mieux le développement de votre enfant.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-          {/* Programme Préscolaire */}
-          <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-            <div className="relative h-64">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <Link
+            href="/programmes/prescolaire"
+            className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+          >
+            <div className="relative h-48 md:h-64">
               <Image
                 src="/images/programs/prescolaire-program.webp"
                 alt="Programme préscolaire"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform group-hover:scale-105"
               />
             </div>
-            <div className="p-6 md:p-8">
-              <h3 className="text-2xl font-bold text-navy-blue mb-3">Préscolaire (3-5 ans)</h3>
-              <p className="text-navy-blue/70 mb-6">
-                Notre programme préscolaire offre un environnement stimulant où les enfants développent leur curiosité
-                naturelle et acquièrent les bases essentielles pour leur future scolarité.
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-navy-blue mb-2">Programme Préscolaire</h3>
+              <p className="text-navy-blue/70 mb-4">
+                Une approche ludique et stimulante pour les enfants de 3 à 5 ans, favorisant l&apos;éveil et la
+                socialisation.
               </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2">
-                  <ArrowRight className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Éveil linguistique et mathématique</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <ArrowRight className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Développement moteur et sensoriel</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <ArrowRight className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Socialisation et autonomie</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <ArrowRight className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Activités créatives et artistiques</span>
-                </li>
-              </ul>
-              <Button asChild className="w-full bg-water-blue hover:bg-water-blue/90">
-                <Link href="/programmes/prescolaire">En savoir plus</Link>
-              </Button>
+              <span className="text-bright-red font-medium inline-flex items-center gap-1">
+                En savoir plus <ArrowRight className="h-4 w-4" />
+              </span>
             </div>
-          </div>
+          </Link>
 
-          {/* Programme Primaire */}
-          <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-            <div className="relative h-64">
+          <Link
+            href="/programmes/primaire"
+            className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+          >
+            <div className="relative h-48 md:h-64">
               <Image
                 src="/images/programs/primaire-program.webp"
                 alt="Programme primaire"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform group-hover:scale-105"
               />
             </div>
-            <div className="p-6 md:p-8">
-              <h3 className="text-2xl font-bold text-navy-blue mb-3">Primaire (6-11 ans)</h3>
-              <p className="text-navy-blue/70 mb-6">
-                Notre programme primaire offre un enseignement de qualité qui combine rigueur académique et pédagogie
-                innovante pour préparer les élèves aux défis du monde de demain.
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-navy-blue mb-2">Programme Primaire</h3>
+              <p className="text-navy-blue/70 mb-4">
+                Un enseignement complet et structuré pour les 6-11 ans, alliant excellence académique et épanouissement
+                personnel.
               </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2">
-                  <ArrowRight className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Maîtrise des fondamentaux (français, mathématiques)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <ArrowRight className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Découverte des sciences et de l&apos;histoire-géographie</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <ArrowRight className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Apprentissage des langues étrangères</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <ArrowRight className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Éducation artistique, sportive et numérique</span>
-                </li>
-              </ul>
-              <Button asChild className="w-full bg-water-blue hover:bg-water-blue/90">
-                <Link href="/programmes/primaire">En savoir plus</Link>
-              </Button>
+              <span className="text-bright-red font-medium inline-flex items-center gap-1">
+                En savoir plus <ArrowRight className="h-4 w-4" />
+              </span>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>

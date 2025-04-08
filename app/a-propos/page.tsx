@@ -41,7 +41,7 @@ export default function AProposPage() {
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000"
                 alt="Histoire de l'École Amiral"
                 fill
                 className="object-cover"
@@ -108,7 +108,7 @@ export default function AProposPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1 relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000"
                 alt="Notre approche pédagogique"
                 fill
                 className="object-cover"

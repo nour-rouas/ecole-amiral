@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import Image from "next/image"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -11,6 +12,7 @@ import { cn } from "@/lib/utils"
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +43,13 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1">
-          <Link href="/" className="px-3 py-2 text-navy-blue hover:text-water-blue transition-colors">
+          <Link 
+            href="/" 
+            className={cn(
+              "px-3 py-2 text-navy-blue hover:text-water-blue transition-colors relative",
+              pathname === "/" && "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-bright-red/80"
+            )}
+          >
             Accueil
           </Link>
 
@@ -49,7 +57,10 @@ export default function Header() {
             <DropdownMenuTrigger asChild>
               <Button
                 variant="ghost"
-                className="px-3 py-2 text-navy-blue hover:text-water-blue transition-colors flex items-center gap-1"
+                className={cn(
+                  "px-3 py-2 text-navy-blue hover:text-water-blue transition-colors flex items-center gap-1 relative",
+                  pathname.startsWith('/a-propos') && "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-bright-red/80"
+                )}
               >
                 À propos <ChevronDown className="h-4 w-4" />
               </Button>
@@ -77,7 +88,10 @@ export default function Header() {
             <DropdownMenuTrigger asChild>
               <Button
                 variant="ghost"
-                className="px-3 py-2 text-navy-blue hover:text-water-blue transition-colors flex items-center gap-1"
+                className={cn(
+                  "px-3 py-2 text-navy-blue hover:text-water-blue transition-colors flex items-center gap-1 relative",
+                  pathname.startsWith('/programmes') && "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-bright-red/80"
+                )}
               >
                 Programmes <ChevronDown className="h-4 w-4" />
               </Button>
@@ -96,11 +110,23 @@ export default function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Link href="/installations" className="px-3 py-2 text-navy-blue hover:text-water-blue transition-colors">
+          <Link 
+            href="/installations" 
+            className={cn(
+              "px-3 py-2 text-navy-blue hover:text-water-blue transition-colors relative",
+              pathname === "/installations" && "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-bright-red/80"
+            )}
+          >
             Installations
           </Link>
 
-          <Link href="/contact" className="px-3 py-2 text-navy-blue hover:text-water-blue transition-colors">
+          <Link 
+            href="/contact" 
+            className={cn(
+              "px-3 py-2 text-navy-blue hover:text-water-blue transition-colors relative",
+              pathname === "/contact" && "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-bright-red/80"
+            )}
+          >
             Contact
           </Link>
         </nav>
@@ -122,7 +148,10 @@ export default function Header() {
           <nav className="flex flex-col space-y-4">
             <Link
               href="/"
-              className="text-navy-blue hover:text-water-blue transition-colors"
+              className={cn(
+                "text-navy-blue hover:text-water-blue transition-colors relative",
+                pathname === "/" && "text-bright-red"
+              )}
               onClick={() => setIsOpen(false)}
             >
               Accueil

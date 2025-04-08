@@ -12,21 +12,21 @@ const testimonials = [
       "L'École Amiral a transformé l'expérience scolaire de notre fille. Elle est enthousiaste à l'idée d'aller à l'école chaque jour et nous sommes impressionnés par ses progrès.",
     author: "Marie Dupont",
     role: "Parent d'élève",
-    avatar: "/placeholder.svg?height=100&width=100",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200",
   },
   {
     quote:
       "L'approche pédagogique unique et l'environnement bienveillant de l'École Amiral ont permis à mon fils de s'épanouir tant sur le plan académique que personnel.",
     author: "Thomas Laurent",
     role: "Parent d'élève",
-    avatar: "/placeholder.svg?height=100&width=100",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200",
   },
   {
     quote:
-      "Nous avons choisi l'École Amiral pour son excellence académique et son attention portée au développement global de l'enfant. Nous ne regrettons pas notre choix !",
-    author: "Sophie Martin",
+      "Ce qui distingue l'École Amiral, c'est leur engagement envers chaque élève. Les enseignants sont attentifs et motivés, créant un environnement d'apprentissage exceptionnel.",
+    author: "Sarah Martin",
     role: "Parent d'élève",
-    avatar: "/placeholder.svg?height=100&width=100",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200",
   },
 ]
 

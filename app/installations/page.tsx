@@ -5,52 +5,40 @@ import WaveDivider from "@/components/wave-divider"
 // Simulated gallery images
 const galleryImages = [
   {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Salle de classe maternelle",
-    width: 600,
-    height: 400,
+    src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000",
+    alt: "Salle de classe maternelle - Des enfants participent à des activités créatives",
+    width: 1000,
+    height: 667,
   },
   {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Salle de classe primaire",
-    width: 600,
-    height: 400,
+    src: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1000",
+    alt: "Salle de classe primaire - Espace d'apprentissage moderne",
+    width: 1000,
+    height: 667,
   },
   {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Bibliothèque",
-    width: 600,
-    height: 400,
+    src: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000",
+    alt: "Bibliothèque - Espace de lecture confortable",
+    width: 1000,
+    height: 667,
   },
   {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Cantine",
-    width: 600,
-    height: 400,
+    src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1000",
+    alt: "Cantine - Espace de restauration lumineux",
+    width: 1000,
+    height: 667,
   },
   {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Salle informatique",
-    width: 600,
-    height: 400,
+    src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=1000",
+    alt: "Salle informatique - Équipement moderne",
+    width: 1000,
+    height: 667,
   },
   {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Cour de récréation",
-    width: 600,
-    height: 400,
-  },
-  {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Salle d'arts plastiques",
-    width: 600,
-    height: 400,
-  },
-  {
-    src: "/placeholder.svg?height=400&width=600",
-    alt: "Gymnase",
-    width: 600,
-    height: 400,
+    src: "https://images.unsplash.com/photo-1598301257982-0cf014dabbcd?q=80&w=1000",
+    alt: "Aire de jeux - Espace récréatif sécurisé",
+    width: 1000,
+    height: 667,
   },
 ]
 
@@ -86,15 +74,20 @@ export default function InstallationsPage() {
               </p>
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
-              <Image src="/placeholder.svg?height=400&width=600" alt="Salle de classe" fill className="object-cover" />
+              <Image 
+                src="https://images.unsplash.com/photo-1448932252197-d19750584e56?q=80&w=1000" 
+                alt="Salle de classe moderne avec tables disposées en groupes" 
+                fill 
+                className="object-cover" 
+              />
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
             <div className="order-2 md:order-1 relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Cour de récréation"
+                src="https://images.unsplash.com/photo-1543616991-75a2d126d7da?q=80&w=1000"
+                alt="Aire de jeux colorée et sécurisée"
                 fill
                 className="object-cover"
               />
@@ -128,7 +121,12 @@ export default function InstallationsPage() {
               <p className="text-navy-blue/80">Tous nos espaces sont accessibles aux personnes à mobilité réduite.</p>
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
-              <Image src="/placeholder.svg?height=400&width=600" alt="Bibliothèque" fill className="object-cover" />
+              <Image 
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000" 
+                alt="Bibliothèque moderne avec espaces de lecture" 
+                fill 
+                className="object-cover" 
+              />
             </div>
           </div>
 
