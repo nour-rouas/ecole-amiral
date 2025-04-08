@@ -23,14 +23,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  experimental: {
-    webpackBuildWorker: true,
-    parallelServerBuildTraces: true,
-    parallelServerCompiles: true,
-  },
   // Add basePath and assetPrefix when deploying to GitHub Pages
   basePath: process.env.NODE_ENV === 'production' ? '/ecole' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/ecole/' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/ecole/' : ''
 }
 
 if (userConfig) {
