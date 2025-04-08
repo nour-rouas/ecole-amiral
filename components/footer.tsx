@@ -83,14 +83,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/ressources/menus" className="text-gray-300 hover:text-white transition-colors">
-                  Menus de la cantine
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-gray-300 hover:text-white transition-colors">
-                  FAQ
-                </Link>
               </li>
             </ul>
           </div>
@@ -122,12 +114,6 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p>© {new Date().getFullYear()} École Amiral. Tous droits réservés.</p>
             <div className="flex gap-4">
-              <Link href="/mentions-legales" className="hover:text-white transition-colors">
-                Mentions légales
-              </Link>
-              <Link href="/politique-de-confidentialite" className="hover:text-white transition-colors">
-                Politique de confidentialité
-              </Link>
             </div>
           </div>
         </div>

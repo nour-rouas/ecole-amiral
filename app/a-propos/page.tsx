@@ -41,7 +41,7 @@ export default function AProposPage() {
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000"
+                src="/images/installations/amiral-acess.webp"
                 alt="Histoire de l'École Amiral"
                 fill
                 className="object-cover"

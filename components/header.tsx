@@ -131,9 +131,11 @@ export default function Header() {
           </Link>
         </nav>
 
-        <Button variant="default" className="hidden lg:flex bg-bright-red hover:bg-bright-red/90 text-white">
-          Demande d'inscription
-        </Button>
+        <Link href="/contact">
+          <Button variant="default" className="hidden lg:flex bg-bright-red hover:bg-bright-red/90 text-white">
+            Demande d'inscription
+          </Button>
+        </Link>
 
         {/* Mobile Navigation Toggle */}
         <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -224,9 +226,11 @@ export default function Header() {
             <Button
               variant="default"
               className="w-full bg-bright-red hover:bg-bright-red/90 text-white mt-2"
-              onClick={() => setIsOpen(false)}
+              asChild
             >
-              Contact
+              <Link href="/contact">
+                Demande d'inscription
+              </Link>
             </Button>
           </nav>
         </div>

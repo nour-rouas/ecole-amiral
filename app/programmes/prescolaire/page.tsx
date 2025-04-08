@@ -1,8 +1,84 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Check, Clock, Users, BookOpen, Palette, Music, Heart } from "lucide-react"
+import { BookOpen, Heart, Music, Palette, Users } from "lucide-react"
 import WaveDivider from "@/components/wave-divider"
+import { ScheduleSection } from "@/components/programs/schedule-section"
+import { LearningDomainsGrid } from "@/components/programs/learning-domain"
+
+const dailySchedule = [
+  { time: "8h30 - 9h15", activity: "Accueil et activités libres" },
+  { time: "9h15 - 10h30", activity: "Activités d'apprentissage dirigées" },
+  { time: "10h30 - 11h45", activity: "Jeux extérieurs et activités physiques" },
+  { time: "11h45 - 13h00", activity: "Déjeuner et temps calme" },
+  { time: "13h00 - 14h30", activity: "Sieste pour les petits / Activités calmes pour les grands" },
+  { time: "14h30 - 15h45", activity: "Ateliers thématiques et projets" },
+  { time: "15h45 - 16h15", activity: "Goûter et histoire" },
+  { time: "16h15 - 16h30", activity: "Préparation au départ" },
+]
+
+const learningDomains = [
+  {
+    icon: BookOpen,
+    title: "Langage et communication",
+    skills: [
+      "Développement du vocabulaire",
+      "Expression orale et écoute",
+      "Pré-lecture et familiarisation avec les livres",
+      "Comptines et chansons",
+    ],
+  },
+  {
+    icon: Users,
+    title: "Développement social et émotionnel",
+    skills: [
+      "Confiance en soi et autonomie",
+      "Coopération et partage",
+      "Gestion des émotions",
+      "Respect des règles et des autres",
+    ],
+  },
+  {
+    icon: Palette,
+    title: "Créativité et expression artistique",
+    skills: [
+      "Arts plastiques et bricolage",
+      "Musique et mouvement",
+      "Jeu symbolique et dramatique",
+      "Expression corporelle",
+    ],
+  },
+  {
+    icon: Music,
+    title: "Éveil mathématique et logique",
+    skills: [
+      "Reconnaissance des nombres et comptage",
+      "Formes et couleurs",
+      "Tri et classification",
+      "Résolution de problèmes simples",
+    ],
+  },
+  {
+    icon: Heart,
+    title: "Développement physique et moteur",
+    skills: [
+      "Motricité globale (courir, sauter, grimper)",
+      "Motricité fine (dessiner, découper, manipuler)",
+      "Coordination œil-main",
+      "Conscience corporelle et spatiale",
+    ],
+  },
+  {
+    icon: BookOpen,
+    title: "Découverte du monde",
+    skills: [
+      "Exploration de la nature et des sciences",
+      "Sensibilisation à l'environnement",
+      "Découverte des cultures et traditions",
+      "Initiation aux nouvelles technologies",
+    ],
+  },
+]
 
 export default function PrescolairePage() {
   return (
@@ -10,7 +86,7 @@ export default function PrescolairePage() {
       <section className="bg-gradient-to-b from-sky-blue to-white py-12 md:py-16 lg:py-24 relative">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold text-navy-blue mb-4">Programme Préscolaire</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-navy-blue mb-4">Programme Amiral Préscolaire</h1>
             <p className="text-navy-blue/80">
               Une fondation solide pour l&apos;apprentissage et le développement des enfants de 3 à 5 ans.
             </p>
@@ -41,237 +117,21 @@ export default function PrescolairePage() {
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1587652990194-38152b3f2479?q=80&w=1000"
-                alt="Activités d'éveil en maternelle"
+                src="/images/programs/prescolaire-program.webp"
+                alt="Préscolaire programmes Amiral"
                 fill
                 className="object-cover"
               />
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-8 mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-blue mb-6 text-center">
-              Notre journée préscolaire
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Clock className="h-6 w-6 text-bright-red mr-2" />
-                  <h3 className="font-bold text-navy-blue">8h30 - 9h15</h3>
-                </div>
-                <p className="text-navy-blue/70">Accueil et activités libres</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Clock className="h-6 w-6 text-bright-red mr-2" />
-                  <h3 className="font-bold text-navy-blue">9h15 - 10h30</h3>
-                </div>
-                <p className="text-navy-blue/70">Activités d&apos;apprentissage dirigées</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Clock className="h-6 w-6 text-bright-red mr-2" />
-                  <h3 className="font-bold text-navy-blue">10h30 - 11h45</h3>
-                </div>
-                <p className="text-navy-blue/70">Jeux extérieurs et activités physiques</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Clock className="h-6 w-6 text-bright-red mr-2" />
-                  <h3 className="font-bold text-navy-blue">11h45 - 13h00</h3>
-                </div>
-                <p className="text-navy-blue/70">Déjeuner et temps calme</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Clock className="h-6 w-6 text-bright-red mr-2" />
-                  <h3 className="font-bold text-navy-blue">13h00 - 14h30</h3>
-                </div>
-                <p className="text-navy-blue/70">Sieste pour les petits / Activités calmes pour les grands</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Clock className="h-6 w-6 text-bright-red mr-2" />
-                  <h3 className="font-bold text-navy-blue">14h30 - 15h45</h3>
-                </div>
-                <p className="text-navy-blue/70">Ateliers thématiques et projets</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Clock className="h-6 w-6 text-bright-red mr-2" />
-                  <h3 className="font-bold text-navy-blue">15h45 - 16h15</h3>
-                </div>
-                <p className="text-navy-blue/70">Goûter et histoire</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  <Clock className="h-6 w-6 text-bright-red mr-2" />
-                  <h3 className="font-bold text-navy-blue">16h15 - 16h30</h3>
-                </div>
-                <p className="text-navy-blue/70">Préparation au départ</p>
-              </div>
-            </div>
-          </div>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-navy-blue mb-8 text-center">
-            Domaines d&apos;apprentissage
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-water-blue">
-              <div className="bg-sky-blue/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <BookOpen className="h-6 w-6 text-navy-blue" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-blue mb-3">Langage et communication</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Développement du vocabulaire</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Expression orale et écoute</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Pré-lecture et familiarisation avec les livres</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Comptines et chansons</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-water-blue">
-              <div className="bg-sky-blue/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Users className="h-6 w-6 text-navy-blue" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-blue mb-3">Développement social et émotionnel</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Confiance en soi et autonomie</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Coopération et partage</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Gestion des émotions</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Respect des règles et des autres</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-water-blue">
-              <div className="bg-sky-blue/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Palette className="h-6 w-6 text-navy-blue" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-blue mb-3">Créativité et expression artistique</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Arts plastiques et bricolage</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Musique et mouvement</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Jeu symbolique et dramatique</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Expression corporelle</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-water-blue">
-              <div className="bg-sky-blue/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Music className="h-6 w-6 text-navy-blue" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-blue mb-3">Éveil mathématique et logique</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Reconnaissance des nombres et comptage</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Formes et couleurs</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Tri et classification</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Résolution de problèmes simples</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-water-blue">
-              <div className="bg-sky-blue/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Heart className="h-6 w-6 text-navy-blue" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-blue mb-3">Développement physique et moteur</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Motricité globale (courir, sauter, grimper)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Motricité fine (dessiner, découper, manipuler)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Coordination œil-main</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Conscience corporelle et spatiale</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-water-blue">
-              <div className="bg-sky-blue/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <BookOpen className="h-6 w-6 text-navy-blue" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-blue mb-3">Découverte du monde</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Exploration de la nature et des sciences</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Sensibilisation à l&apos;environnement</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Découverte des cultures et traditions</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Initiation aux nouvelles technologies</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <ScheduleSection title="Notre journée préscolaire" schedule={dailySchedule} />
+          <LearningDomainsGrid title="Domaines d'apprentissage" domains={learningDomains} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1 relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1544237526-cae15a57ed1e?q=80&w=1000"
+                src="https://img.freepik.com/free-photo/medium-shot-people-studying-together_23-2149204779.jpg"
                 alt="Apprentissage par le jeu en maternelle"
                 fill
                 className="object-cover"

@@ -3,6 +3,108 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Check, BookOpen, Users, Brain, Globe, Calculator, Lightbulb } from "lucide-react"
 import WaveDivider from "@/components/wave-divider"
+import { ProgramLevel } from "@/components/programs/program-level"
+import { LearningDomainsGrid } from "@/components/programs/learning-domain"
+
+const programLevels = [
+  {
+    title: "CP (Cours Préparatoire)",
+    ageRange: "6-7 ans",
+    description: "Le CP est une année fondamentale où les élèves acquièrent les bases de la lecture, de l'écriture et des mathématiques. Notre approche progressive et structurée permet à chaque enfant d'avancer à son rythme.",
+    keyPoints: [
+      { text: "Apprentissage systématique de la lecture" },
+      { text: "Écriture et production de textes simples" },
+      { text: "Numération et opérations de base" }
+    ],
+    specialProjects: [
+      { text: "Création d'un abécédaire marin" },
+      { text: "Correspondance avec une autre école" }
+    ]
+  },
+  {
+    title: "CE1-CE2 (Cours Élémentaire)",
+    ageRange: "7-9 ans",
+    description: "Durant ces années, les élèves consolident leurs acquis et développent leur autonomie. Ils approfondissent leurs compétences en lecture, écriture et mathématiques tout en élargissant leurs connaissances dans d'autres domaines.",
+    keyPoints: [
+      { text: "Lecture fluide et compréhension de textes" },
+      { text: "Production d'écrits variés" },
+      { text: "Calcul mental et résolution de problèmes" },
+      { text: "Découverte du monde (histoire, géographie, sciences)" }
+    ],
+    specialProjects: [
+      { text: "Journal de classe trimestriel" },
+      { text: "Projet scientifique sur l'eau et les océans" },
+      { text: "Initiation à la programmation" }
+    ]
+  },
+  {
+    title: "CM1-CM2 (Cours Moyen)",
+    ageRange: "9-11 ans",
+    description: "Les dernières années du primaire préparent les élèves à l'entrée au collège. Ils développent leur esprit critique, leur autonomie et approfondissent leurs connaissances dans toutes les matières.",
+    keyPoints: [
+      { text: "Maîtrise de la langue française écrite et orale" },
+      { text: "Mathématiques avancées et raisonnement logique" },
+      { text: "Histoire, géographie et éducation civique" },
+      { text: "Sciences expérimentales et technologie" }
+    ],
+    specialProjects: [
+      { text: "Classe de découverte (voyage scolaire)" },
+      { text: "Projet entrepreneurial" },
+      { text: "Préparation à l'entrée au collège" }
+    ]
+  }
+]
+
+const excellenceDomains = [
+  {
+    icon: BookOpen,
+    title: "Maîtrise des fondamentaux",
+    skills: [
+      "Méthodes d'apprentissage éprouvées",
+      "Suivi personnalisé des progrès"
+    ]
+  },
+  {
+    icon: Globe,
+    title: "Langues étrangères",
+    skills: [
+      "3 heures d'anglais par semaine",
+      "Activités culturelles en anglais"
+    ]
+  },
+  {
+    icon: Calculator,
+    title: "Sciences et technologies",
+    skills: [
+      "Laboratoire scientifique adapté",
+      "Initiation au codage et à la robotique"
+    ]
+  },
+  {
+    icon: Brain,
+    title: "Développement personnel",
+    skills: [
+      "Ateliers de gestion des émotions",
+      "Projets collaboratifs"
+    ]
+  },
+  {
+    icon: Users,
+    title: "Citoyenneté et valeurs",
+    skills: [
+      "Conseil des élèves",
+      "Projets solidaires et écologiques"
+    ]
+  },
+  {
+    icon: Lightbulb,
+    title: "Arts et culture",
+    skills: [
+      "Ateliers artistiques hebdomadaires",
+      "Sorties culturelles régulières"
+    ]
+  }
+]
 
 export default function PrimairePage() {
   return (
@@ -10,7 +112,7 @@ export default function PrimairePage() {
       <section className="bg-gradient-to-b from-sky-blue to-white py-12 md:py-16 lg:py-24 relative">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold text-navy-blue mb-4">Programme Primaire</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-navy-blue mb-4">Programme Amiral Primaire</h1>
             <p className="text-navy-blue/80">Une éducation complète et stimulante pour les enfants de 6 à 11 ans.</p>
           </div>
         </div>
@@ -37,7 +139,7 @@ export default function PrimairePage() {
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=1000"
+                src="/images/programs/primaire-program.webp"
                 alt="Salle de classe primaire avec élèves travaillant"
                 fill
                 className="object-cover"
@@ -46,290 +148,16 @@ export default function PrimairePage() {
           </div>
 
           <h2 className="text-2xl md:text-3xl font-bold text-navy-blue mb-8 text-center">Notre programme par niveau</h2>
-
           <div className="space-y-8 mb-16">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="bg-navy-blue text-white p-4">
-                <h3 className="text-xl font-bold">CP (Cours Préparatoire) - 6-7 ans</h3>
-              </div>
-              <div className="p-6">
-                <p className="text-navy-blue/80 mb-4">
-                  Le CP est une année fondamentale où les élèves acquièrent les bases de la lecture, de l&apos;écriture
-                  et des mathématiques. Notre approche progressive et structurée permet à chaque enfant d&apos;avancer à
-                  son rythme.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <h4 className="font-bold text-navy-blue mb-2">Points clés :</h4>
-                    <ul className="space-y-1">
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Apprentissage systématique de la lecture</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Écriture et production de textes simples</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Numération et opérations de base</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-navy-blue mb-2">Projets spéciaux :</h4>
-                    <ul className="space-y-1">
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Création d&apos;un abécédaire marin</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Correspondance avec une autre école</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="bg-navy-blue text-white p-4">
-                <h3 className="text-xl font-bold">CE1-CE2 (Cours Élémentaire) - 7-9 ans</h3>
-              </div>
-              <div className="p-6">
-                <p className="text-navy-blue/80 mb-4">
-                  Durant ces années, les élèves consolident leurs acquis et développent leur autonomie. Ils
-                  approfondissent leurs compétences en lecture, écriture et mathématiques tout en élargissant leurs
-                  connaissances dans d&apos;autres domaines.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <h4 className="font-bold text-navy-blue mb-2">Points clés :</h4>
-                    <ul className="space-y-1">
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Lecture fluide et compréhension de textes</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Production d&apos;écrits variés</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Calcul mental et résolution de problèmes</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Découverte du monde (histoire, géographie, sciences)</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-navy-blue mb-2">Projets spéciaux :</h4>
-                    <ul className="space-y-1">
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Journal de classe trimestriel</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Projet scientifique sur l&apos;eau et les océans</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Initiation à la programmation</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="bg-navy-blue text-white p-4">
-                <h3 className="text-xl font-bold">CM1-CM2 (Cours Moyen) - 9-11 ans</h3>
-              </div>
-              <div className="p-6">
-                <p className="text-navy-blue/80 mb-4">
-                  Les dernières années du primaire préparent les élèves à l&apos;entrée au collège. Ils développent leur
-                  esprit critique, leur autonomie et approfondissent leurs connaissances dans toutes les matières.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <h4 className="font-bold text-navy-blue mb-2">Points clés :</h4>
-                    <ul className="space-y-1">
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Maîtrise de la langue française écrite et orale</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Mathématiques avancées et raisonnement logique</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Histoire, géographie et éducation civique</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Sciences expérimentales et technologie</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-navy-blue mb-2">Projets spéciaux :</h4>
-                    <ul className="space-y-1">
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Classe de découverte (voyage scolaire)</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Projet entrepreneurial</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                        <span>Préparation à l&apos;entrée au collège</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {programLevels.map((level, index) => (
+              <ProgramLevel key={index} {...level} />
+            ))}
           </div>
 
           <h2 className="text-2xl md:text-3xl font-bold text-navy-blue mb-8 text-center">
             Nos domaines d&apos;excellence
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-water-blue">
-              <div className="bg-sky-blue/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <BookOpen className="h-6 w-6 text-navy-blue" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-blue mb-3">Maîtrise des fondamentaux</h3>
-              <p className="text-navy-blue/80 mb-4">
-                Nous mettons l&apos;accent sur une solide maîtrise de la lecture, de l&apos;écriture et des
-                mathématiques, essentiels à la réussite scolaire.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Méthodes d&apos;apprentissage éprouvées</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Suivi personnalisé des progrès</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-water-blue">
-              <div className="bg-sky-blue/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Globe className="h-6 w-6 text-navy-blue" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-blue mb-3">Langues étrangères</h3>
-              <p className="text-navy-blue/80 mb-4">
-                L&apos;apprentissage de l&apos;anglais dès le CP, avec une approche communicative et ludique pour
-                développer l&apos;aisance linguistique.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>3 heures d&apos;anglais par semaine</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Activités culturelles en anglais</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-water-blue">
-              <div className="bg-sky-blue/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Calculator className="h-6 w-6 text-navy-blue" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-blue mb-3">Sciences et technologies</h3>
-              <p className="text-navy-blue/80 mb-4">
-                Une approche pratique des sciences avec des expériences, des projets et l&apos;utilisation des nouvelles
-                technologies.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Laboratoire scientifique adapté</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Initiation au codage et à la robotique</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-water-blue">
-              <div className="bg-sky-blue/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Brain className="h-6 w-6 text-navy-blue" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-blue mb-3">Développement personnel</h3>
-              <p className="text-navy-blue/80 mb-4">
-                Nous accordons une grande importance au développement des compétences sociales, émotionnelles et de
-                l&apos;estime de soi.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Ateliers de gestion des émotions</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Projets collaboratifs</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-water-blue">
-              <div className="bg-sky-blue/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Users className="h-6 w-6 text-navy-blue" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-blue mb-3">Citoyenneté et valeurs</h3>
-              <p className="text-navy-blue/80 mb-4">
-                Formation de citoyens responsables, respectueux et engagés à travers des projets concrets et des
-                discussions.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Conseil des élèves</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Projets solidaires et écologiques</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-water-blue">
-              <div className="bg-sky-blue/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                <Lightbulb className="h-6 w-6 text-navy-blue" />
-              </div>
-              <h3 className="text-xl font-bold text-navy-blue mb-3">Arts et culture</h3>
-              <p className="text-navy-blue/80 mb-4">
-                Un programme artistique riche incluant les arts visuels, la musique, le théâtre et la découverte du
-                patrimoine culturel.
-              </p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Ateliers artistiques hebdomadaires</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="h-5 w-5 text-bright-red flex-shrink-0 mt-0.5" />
-                  <span>Sorties culturelles régulières</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <LearningDomainsGrid title="" domains={excellenceDomains} />
 
           <div className="bg-gray-50 rounded-lg p-8 mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-navy-blue mb-6 text-center">
@@ -365,7 +193,7 @@ export default function PrimairePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1610484826967-09c5720778c7?q=80&w=1000"
+                src="https://img.freepik.com/free-photo/kids-painting-together-medium-shot_23-2149632405.jpg"
                 alt="Enfants participant à une activité scientifique"
                 fill
                 className="object-cover"

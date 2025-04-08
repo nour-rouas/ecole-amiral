@@ -40,6 +40,18 @@ const galleryImages = [
     width: 1000,
     height: 667,
   },
+  {
+    src: "https://img.freepik.com/free-photo/teenagers-studying-stairs-library_23-2147864043.jpg",
+    alt: "Aire de jeux - Espace récréatif sécurisé",
+    width: 1000,
+    height: 667,
+  },
+  {
+    src: "https://img.freepik.com/free-photo/room-interior-design_23-2148899444.jpg",
+    alt: "Aire de jeux - Espace récréatif sécurisé",
+    width: 1000,
+    height: 667,
+  },
 ]
 
 export default function InstallationsPage() {
@@ -75,7 +87,7 @@ export default function InstallationsPage() {
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image 
-                src="https://images.unsplash.com/photo-1448932252197-d19750584e56?q=80&w=1000" 
+                src="https://img.freepik.com/free-photo/room-interior-design_23-2148899442.jpg" 
                 alt="Salle de classe moderne avec tables disposées en groupes" 
                 fill 
                 className="object-cover" 
@@ -86,7 +98,7 @@ export default function InstallationsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
             <div className="order-2 md:order-1 relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1543616991-75a2d126d7da?q=80&w=1000"
+                src="https://img.freepik.com/free-photo/child-students-school_23-2149511013.jpg"
                 alt="Aire de jeux colorée et sécurisée"
                 fill
                 className="object-cover"
