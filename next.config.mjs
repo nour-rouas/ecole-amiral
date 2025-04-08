@@ -13,6 +13,7 @@ try {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -27,6 +28,9 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  // Add basePath and assetPrefix when deploying to GitHub Pages
+  basePath: process.env.NODE_ENV === 'production' ? '/ecole' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/ecole/' : '',
 }
 
 if (userConfig) {
